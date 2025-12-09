@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channels - First United Pentecostal Church of Cookeville</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER NAVIGATION -->
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="church-logo">First UPC of Cookeville</div>
+            <ul class="navigation-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sermons">Sermons</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+        <h1 class="hero-title">Channels</h1>
+        <p class="hero-subtitle">Explore our sermons, events, and ministry resources all in one place</p>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="main-container">
+        
+        <!-- SERMON ARCHIVE SECTION -->
+        <section class="sermon-archive-section">
+            <h2 class="section-heading">Sermon Archive</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons-container">
+                <button class="filter-button is-active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="sermon">Sermons</button>
+                <button class="filter-button" data-filter="bible-study">Bible Studies</button>
+                <button class="filter-button" data-filter="worship">Worship</button>
+            </div>
+
+            <!-- Sermon Cards Grid -->
+            <div class="sermon-cards-grid" id="sermonCardsGrid">
+                <!-- Cards will be injected dynamically from data/sermons.json -->
+            </div>
+        </section>
+
+        <!-- UPCOMING EVENTS SECTION -->
+        <section class="events-section">
+            <h2 class="section-heading">Upcoming Events</h2>
+            
+            <div class="events-list-container">
+                
+                <!-- Event Item 1 -->
+                <article class="event-item">
+                    <div class="event-date-box">
+                        <div class="event-day">15</div>
+                        <div class="event-month">DEC</div>
+                    </div>
+                    <div class="event-information">
+                        <h3 class="event-title">Christmas Cantata</h3>
+                        <div class="event-location-time">
+                            📍 Main Sanctuary | ⏰ 6:00 PM - 8:00 PM
+                        </div>
+                        <p class="event-description">
+                            Join us for our annual Christmas cantata featuring our choir and orchestra. 
+                            A beautiful celebration of the birth of Christ through music and scripture.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Event Item 2 -->
+                <article class="event-item">
+                    <div class="event-date-box">
+                        <div class="event-day">18</div>
+                        <div class="event-month">DEC</div>
+                    </div>
+                    <div class="event-information">
+                        <h3 class="event-title">Youth Group Christmas Party</h3>
+                        <div class="event-location-time">
+                            📍 Youth Center | ⏰ 7:00 PM - 9:30 PM
+                        </div>
+                        <p class="event-description">
+                            An evening of games, food, and fellowship for our youth. 
+                            Bring a white elephant gift under $15!
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Event Item 3 -->
+                <article class="event-item">
+                    <div class="event-date-box">
+                        <div class="event-day">24</div>
+                        <div class="event-month">DEC</div>
+                    </div>
+                    <div class="event-information">
+                        <h3 class="event-title">Christmas Eve Service</h3>
+                        <div class="event-location-time">
+                            📍 Main Sanctuary | ⏰ 5:00 PM & 7:00 PM
+                        </div>
+                        <p class="event-description">
+                            Celebrate the birth of our Savior with candlelight, carols, and communion. 
+                            Two service times available.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Event Item 4 -->
+                <article class="event-item">
+                    <div class="event-date-box">
+                        <div class="event-day">31</div>
+                        <div class="event-month">DEC</div>
+                    </div>
+                    <div class="event-information">
+                        <h3 class="event-title">New Year's Eve Prayer Service</h3>
+                        <div class="event-location-time">
+                            📍 Main Sanctuary | ⏰ 10:00 PM - 12:30 AM
+                        </div>
+                        <p class="event-description">
+                            Ring in the new year with prayer, worship, and reflection as we seek 
+                            God's guidance for the year ahead.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION SECTION -->
+        <section class="call-to-action-section">
+            <h2 class="cta-heading">Join Us This Sunday</h2>
+            <p class="cta-text">
+                Experience worship, fellowship, and biblical teaching. Everyone is welcome!
+            </p>
+            <a href="https://www.upc1.org/contact-8" target="_blank" rel="noopener" class="cta-button">Plan Your Visit</a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content-grid">
+            
+            <!-- Footer Section 1: Contact -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Contact Us</h3>
+                <p>First United Pentecostal Church</p>
+                <p>875 S Walnut Avenue</p>
+                <p>Cookeville, TN 38501</p>
+                <p>Phone: 931-526-1575</p>
+                <p>Email: joshhodum@me.com</p>
+                <p>Lead Pastor: Josh Hodum</p>
+            </div>
+
+            <!-- Footer Section 2: Service Times -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Service Times</h3>
+                <p>Sunday: Morning Manna 10:00 AM</p>
+                <p>Sunday: Worship Service 11:00 AM</p>
+                <p>Monday: Meet & Greet 6:30 PM</p>
+                <p>Monday: Celebrate Recovery 7:00 PM</p>
+                <p>Tuesday: Prayer 7:00 PM</p>
+                <p>Wednesday: Bible Study 7:00 PM</p>
+                <p>Wednesday: Small Groups 7:00 PM (All Ages)</p>
+            </div>
+
+            <!-- Footer Section 3: Quick Links -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <a href="https://www.upc1.org/what-we-believe" target="_blank" rel="noopener">What We Believe</a>
+                <a href="https://www.upc1.org/leadership" target="_blank" rel="noopener">Leadership</a>
+                <a href="https://www.upc1.org/give" target="_blank" rel="noopener">Give</a>
+                <a href="https://www.upc1.org/prayer-requests" target="_blank" rel="noopener">Prayer Requests</a>
+                <a href="https://www.upc1.org/calendar" target="_blank" rel="noopener">Calendar</a>
+                <a href="https://www.upc1.org/contact-8" target="_blank" rel="noopener">Contact</a>
+            </div>
+
+            <!-- Footer Section 4: Social Media -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Connect</h3>
+                <a href="https://m.facebook.com/firstchurchcookeville/" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.instagram.com/firstupccookeville/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.youtube.com/@firstchurchcookevilleupc" target="_blank" rel="noopener">YouTube</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+
+    <script>
+    // Dynamic sermon renderer with oEmbed preflight to hide restricted videos
+    (function(){
+        const grid = document.getElementById('sermonCardsGrid');
+        if (!grid) return;
+
+        function createCard({ title, youtubeId, date, speaker }){
+            const article = document.createElement('article');
+            article.className = 'sermon-card';
+            article.setAttribute('data-category', 'sermon');
+            article.setAttribute('data-title', title || 'Sermon');
+            article.setAttribute('data-youtube-id', youtubeId);
+
+            const thumbUrl = `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`;
+
+            article.innerHTML = `
+                <div class="sermon-card-thumbnail" style="background: none; padding: 0;">
+                    <img src="${thumbUrl}" alt="${title || 'Sermon'} thumbnail" style="width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;" />
+                </div>
+                <div class="sermon-card-content">
+                    <span class="sermon-category-tag">Sermon</span>
+                    <h3 class="sermon-title">${title || 'Sermon'}</h3>
+                    <div class="sermon-metadata">
+                        <span class="sermon-date">📅 ${date || ''}</span>
+                        <span class="sermon-speaker">👤 ${speaker || ''}</span>
+                    </div>
+                    <p class="sermon-description">Watch this sermon on our streaming page.</p>
+                </div>
+            `;
+            return article;
+        }
+
+        async function canEmbed(videoId){
+            const url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${encodeURIComponent(videoId)}&format=json`;
+            try {
+                const res = await fetch(url, { method: 'GET' });
+                return res.ok;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        async function loadSermons(){
+            try {
+                const res = await fetch('data/sermons.json', { cache: 'no-store' });
+                if (!res.ok) return;
+                let list = await res.json();
+                if (!Array.isArray(list)) return;
+
+                // Sort by date descending when present (YYYY-MM-DD preferred)
+                list = list.slice().sort((a,b) => {
+                    const da = a && a.date ? Date.parse(a.date) : 0;
+                    const db = b && b.date ? Date.parse(b.date) : 0;
+                    return db - da; // newest first
+                });
+
+                // Render in order; filter by oEmbed availability
+                for (const item of list){
+                    if (!item.youtubeId) continue;
+                    const ok = await canEmbed(item.youtubeId);
+                    if (!ok) continue; // skip restricted/unavailable videos
+                    const card = createCard(item);
+                    grid.appendChild(card);
+                }
+
+                // Re-bind click handlers once cards are injected
+                if (typeof initializeSermonCardClicks === 'function') {
+                    initializeSermonCardClicks();
+                }
+            } catch (err) {
+                console.error('Failed to load sermons:', err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadSermons);
+    })();
+    </script>
+</body>
+</html>
