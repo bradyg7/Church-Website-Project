@@ -1,0 +1,786 @@
+/**
+ * @file styles.css
+ * @description Main stylesheet for the Church Website Project.
+ *              Contains global styles, layout definitions, and component-specific styling.
+ */
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Basic typography and background for the entire page */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+
+.site-header {
+    /* Styles for the main site header, including sticky positioning and shadow */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-navigation {
+    /* Layout for the navigation bar, ensuring proper spacing and alignment */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.church-logo img {
+    /* Styling for the church logo image within the header */
+    max-height: 40px;
+}
+
+.navigation-links {
+    /* Styles for the navigation links list */
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navigation-links a {
+    /* Base styling for individual navigation links */
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation-links a:hover {
+    /* Hover effect for navigation links */
+    color: #cc0000;
+}
+
+
+/* ============================================
+   HERO BANNER SECTION
+   ============================================ */
+
+.hero-banner {
+    /* Full-width banner with a gradient background and centered text */
+    background: linear-gradient(to right, #333, #555);
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero-title {
+    /* Styling for the main title within the hero banner */
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    /* Styling for the subtitle within the hero banner */
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+
+.main-container {
+    /* Central container for main content, applies max-width and horizontal centering */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section-heading {
+    /* Common styling for major section headings */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+
+/* ============================================
+   SERMON ARCHIVE SECTION
+   ============================================ */
+
+.sermon-archive-section {
+    /* Container for the sermon archive, providing bottom margin */
+    margin-bottom: 4rem;
+}
+
+/* Filter Buttons */
+.filter-buttons-container {
+    /* Layout for sermon category filter buttons */
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    /* Styling for individual filter buttons */
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #555;
+    background-color: transparent;
+    color: #555;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover,
+.filter-button.is-active {
+    /* Hover and active states for filter buttons */
+    background-color: #cc0000;
+    color: white;
+    border-color: #cc0000;
+}
+
+/* Sermon Cards Grid */
+.sermon-cards-grid {
+    /* Grid layout for displaying sermon cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual Sermon Card */
+.sermon-card {
+    /* Base styling for each sermon card, including shadow and hover effects */
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sermon-card:hover {
+    /* Hover effect for sermon cards */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.sermon-card-thumbnail {
+    /* Styling for the sermon card thumbnail area */
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to right, #333, #555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.sermon-card-content {
+    /* Padding for the content area of the sermon card */
+    padding: 1.5rem;
+}
+
+.sermon-category-tag {
+    /* Styling for the category tag within the sermon card */
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #eee;
+    color: #555;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.sermon-title {
+    /* Styling for the sermon title */
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.sermon-metadata {
+    /* Layout and styling for sermon metadata (date, speaker) */
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.sermon-description {
+    /* Styling for the sermon description text */
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Hidden state for filtered cards */
+.sermon-card.is-hidden {
+    /* Hides sermon cards that do not match the current filter */
+    display: none;
+}
+
+
+/* ============================================
+   EVENTS SECTION
+   ============================================ */
+
+.events-section {
+    /* Container for the events section, providing bottom margin */
+    margin-bottom: 4rem;
+}
+
+.events-list-container {
+    /* Styling for the container holding the list of event items */
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Individual Event Item */
+.event-item {
+    /* Layout for each individual event item */
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.event-item:last-child {
+    /* Removes the bottom border from the last event item */
+    border-bottom: none;
+}
+
+.event-item:hover {
+    /* Hover effect for event items */
+    background-color: #fcfcfc;
+}
+
+/* Event Date Box */
+.event-date-box {
+    /* Styling for the date display within an event item */
+    flex-shrink: 0;
+    width: 80px;
+    text-align: center;
+    background: linear-gradient(to bottom, #cc0000, #990000);
+    color: white;
+    border-radius: 8px;
+    padding: 1rem 0.5rem;
+}
+
+.event-day {
+    /* Styling for the day number in the event date box */
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-month {
+    /* Styling for the month name in the event date box */
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Event Information */
+.event-information {
+    /* Container for event title, location, time, and description */
+    flex: 1;
+}
+
+.event-title {
+    /* Styling for the event title */
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.event-location-time {
+    /* Styling for event location and time details */
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-description {
+    /* Styling for the event description text */
+    color: #444;
+    line-height: 1.5;
+}
+
+
+/* ============================================
+   CALL TO ACTION SECTION
+   ============================================ */
+
+.call-to-action-section {
+    /* Styling for the call-to-action banner, including background, text color, and spacing */
+    background: linear-gradient(to right, #333, #555);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-radius: 12px;
+}
+
+.cta-heading {
+    /* Styling for the main heading within the call-to-action section */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    /* Styling for the descriptive text within the call-to-action section */
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-button {
+    /* Styling for the call-to-action button */
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: white;
+    color: #cc0000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    /* Hover effect for the call-to-action button */
+    transform: scale(1.05);
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+    /* Overall styling for the site footer */
+    background-color: #222;
+    color: white;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content-grid {
+    /* Grid layout for the content within the footer */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-column {
+    /* Individual footer column styling */
+}
+
+.footer-heading {
+    /* Styling for headings within the footer columns */
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.footer-column p,
+.footer-column a {
+    /* Styling for text and links within footer columns */
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a:hover {
+    /* Hover effect for footer links */
+    color: white;
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Styles applied for screens up to 768px wide (typical for tablets and mobile devices) */
+    .hero-title {
+        /* Adjust font size for smaller screens */
+        font-size: 2.5rem;
+    }
+
+    .navigation-links {
+        /* Adjust spacing for navigation links on smaller screens */
+        gap: 1rem;
+    }
+
+    .sermon-cards-grid {
+        /* Change sermon card grid to a single column layout on smaller screens */
+        grid-template-columns: 1fr;
+    }
+
+    .event-item {
+        /* Stack event item content vertically on smaller screens */
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .event-date-box {
+        /* Make event date box full width on smaller screens */
+        width: 100%;
+    }
+}
+
+/* ============================================
+   PLAYER PAGE
+   ============================================ */
+
+.player-container { 
+    /* Main container for the video player page */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 1rem; 
+    background: #0f0f0f; 
+    color: #fff; 
+}
+.video-section { 
+    /* Section encapsulating the video player and its related information */
+    background: #1a1a1a; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4); 
+}
+.video-player { 
+    /* Container for the video element, setting aspect ratio and background */
+    position: relative; 
+    width: 100%; 
+    aspect-ratio: 16/9; 
+    background: #000; 
+}
+.video-player video { 
+    /* Styling for the HTML5 video element */
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+    background: #000; 
+}
+.video-poster { 
+    /* Overlay for the video poster image and play button */
+    position: absolute; 
+    inset: 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    background: linear-gradient(135deg, #cc0000, #990000); 
+    transition: opacity 0.3s; 
+}
+.video-poster.hidden { 
+    /* Hides the video poster when the video is playing */
+    opacity: 0; 
+    pointer-events: none; 
+}
+.video-poster-image { 
+    /* Styling for the video poster image */
+    position: absolute; 
+    inset: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.play-button-large { 
+    /* Styling for the large play button overlay */
+    position: relative; 
+    width: 80px; 
+    height: 80px; 
+    background: rgba(255,255,255,0.95); 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    transition: all 0.3s; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3); 
+}
+.play-button-large:hover { 
+    /* Hover effect for the large play button */
+    transform: scale(1.1); 
+    background: #fff; 
+}
+.play-button-large::after { 
+    /* Triangle icon for the play button */
+    content: ''; 
+    width: 0; 
+    height: 0; 
+    border-left: 24px solid #cc0000; 
+    border-top: 14px solid transparent; 
+    border-bottom: 14px solid transparent; 
+    margin-left: 6px; 
+}
+.sermon-title-overlay { 
+    /* Styling for the sermon title displayed over the video poster */
+    position: relative; 
+    margin-top: 1rem; 
+    text-align: center; 
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5); 
+}
+.sermon-title-overlay h2 { 
+    /* Styling for the main sermon title in the overlay */
+    font-size: 2rem; 
+    font-weight: 700; 
+    margin-bottom: 0.5rem; 
+}
+.sermon-title-overlay p { 
+    /* Styling for the subtitle/description in the overlay */
+    font-size: 1.1rem; 
+    opacity: 0.9; 
+}
+.video-controls { 
+    /* Container for video playback controls */
+    position: absolute; 
+    inset-inline: 0; 
+    bottom: 0; 
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); 
+    padding: 1.5rem 1rem 1rem; 
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+.video-player:hover .video-controls, .video-controls.show { 
+    /* Visibility of video controls on hover or when explicitly shown */
+    opacity: 1; 
+}
+.progress-bar-container { 
+    /* Container for the video progress bar */
+    width: 100%; 
+    height: 5px; 
+    background: rgba(255,255,255,0.3); 
+    border-radius: 3px; 
+    cursor: pointer; 
+    margin-bottom: 1rem; 
+}
+.progress-bar { 
+    /* Visual fill of the progress bar */
+    height: 100%; 
+    background: #cc0000; 
+    border-radius: 3px; 
+    width: 0%; 
+    transition: width 0.1s; 
+}
+.controls-row { 
+    /* Layout for the row of control buttons */
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+}
+.control-button { 
+    /* Base styling for individual video control buttons */
+    background: none; 
+    border: none; 
+    color: #fff; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    padding: 0.5rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: transform 0.2s; 
+}
+.control-button:hover { 
+    /* Hover effect for control buttons */
+    transform: scale(1.1); 
+}
+.time-display { 
+    /* Styling for current time and duration display */
+    font-size: 0.9rem; 
+    min-width: 100px; 
+}
+.volume-container { 
+    /* Container for volume control */
+    display: flex; 
+    align-items: center; 
+    gap: 0.5rem; 
+}
+.volume-slider { 
+    /* Styling for the volume slider input */
+    width: 80px; 
+    height: 4px; 
+    background: rgba(255,255,255,0.3); 
+    border-radius: 2px; 
+    cursor: pointer; 
+    position: relative; 
+}
+.volume-slider-fill { 
+    /* Visual fill of the volume slider */
+    height: 100%; 
+    background: #fff; 
+    border-radius: 2px; 
+    width: 100%; 
+}
+.loading-spinner { 
+    /* Styling for the video loading spinner */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%,-50%); 
+    width: 50px; 
+    height: 50px; 
+    border: 4px solid rgba(255,255,255,0.3); 
+    border-top-color: #fff; 
+    border-radius: 50%; 
+    animation: spin 1s linear infinite; 
+    display: none; 
+}
+.loading-spinner.active { 
+    /* Activates the loading spinner */
+    display: block; 
+}
+@keyframes spin { 
+    /* Keyframe animation for the loading spinner */
+    to { transform: translate(-50%,-50%) rotate(360deg); } 
+}
+.video-info { 
+    /* Container for additional video information */
+    padding: 2rem; 
+    background: #1a1a1a; 
+}
+.video-info h1 { 
+    /* Styling for the video information heading */
+    font-size: 1.75rem; 
+    margin-bottom: 1rem; 
+}
+.video-meta { 
+    /* Layout and styling for video metadata (e.g., speaker, date) */
+    display: flex; 
+    gap: 2rem; 
+    font-size: 0.95rem; 
+    color: #aaa; 
+    margin-bottom: 1.5rem; 
+    flex-wrap: wrap; 
+}
+.video-description { 
+    /* Styling for the video description text */
+    line-height: 1.6; 
+    color: #ccc; 
+    margin-bottom: 2rem; 
+}
+.sermon-details { 
+    /* Grid layout for detailed sermon information */
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1rem; 
+    padding: 1.5rem; 
+    background: #0f0f0f; 
+    border-radius: 8px; 
+}
+.detail-item { 
+    /* Styling for individual detail items within the sermon details grid */
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.25rem; 
+}
+.detail-label { 
+    /* Styling for the label of a detail item */
+    font-size: 0.85rem; 
+    color: #888; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+}
+.detail-value { 
+    /* Styling for the value of a detail item */
+    font-size: 1rem; 
+    color: #fff; 
+    font-weight: 500; 
+}
+@media (max-width: 768px) { 
+    /* Responsive adjustments for player controls and title on smaller screens */
+    .volume-container { display: none; } 
+    .sermon-title-overlay h2 { font-size: 1.5rem; } 
+}
+
+/* ============================================
+    SERMON STREAM PAGE
+   ============================================ */
+
+.sermon-stream-container { 
+    /* Main container for the sermon stream page, providing layout and spacing */
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 1rem; 
+}
+.sermon-stream-header { 
+    /* Header for the sermon stream, including title and back link */
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
+.sermon-stream-title { 
+    /* Styling for the sermon stream title */
+    font-size: 1.75rem; 
+    margin: 1rem 0; 
+}
+.back-link { 
+    /* Styling for the back navigation link */
+    color: inherit; 
+    text-decoration: none; 
+    font-size: 0.95rem; 
+    opacity: 0.8; 
+}
+.back-link:hover { 
+    /* Hover effect for the back link */
+    text-decoration: underline; 
+    opacity: 1; 
+}
+.video-wrapper { 
+    /* Container for the embedded video player, maintaining aspect ratio */
+    width: 100%; 
+    aspect-ratio: 16 / 9; 
+    background: #000; 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+.video-wrapper iframe { 
+    /* Styling for the embedded iframe video */
+    width: 100%; 
+    height: 100%; 
+    border: 0; 
+    display: block; 
+}
+.fallback { 
+    /* Styling for fallback content when video cannot be loaded */
+    padding: 2rem; 
+    text-align: center; 
+    border: 1px solid rgba(0,0,0,0.08); 
+    border-radius: 8px; 
+}

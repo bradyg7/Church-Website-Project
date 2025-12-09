@@ -1,0 +1,34 @@
+[
+    {
+        "day": "15",
+        "month": "DEC",
+        "title": "Christmas Cantata",
+        "location": "Main Sanctuary",
+        "time": "6:00 PM - 8:00 PM",
+        "description": "Join us for our annual Christmas cantata featuring our choir and orchestra. A beautiful celebration of the birth of Christ through music and scripture."
+    },
+    {
+        "day": "18",
+        "month": "DEC",
+        "title": "Youth Group Christmas Party",
+        "location": "Youth Center",
+        "time": "7:00 PM - 9:30 PM",
+        "description": "An evening of games, food, and fellowship for our youth. Bring a white elephant gift under $15!"
+    },
+    {
+        "day": "24",
+        "month": "DEC",
+        "title": "Christmas Eve Service",
+        "location": "Main Sanctuary",
+        "time": "5:00 PM & 7:00 PM",
+        "description": "Celebrate the birth of our Savior with candlelight, carols, and communion. Two service times available."
+    },
+    {
+        "day": "31",
+        "month": "DEC",
+        "title": "New Year's Eve Prayer Service",
+        "location": "Main Sanctuary",
+        "time": "10:00 PM - 12:30 AM",
+        "description": "Ring in the new year with prayer, worship, and reflection as we seek God's guidance for the year ahead."
+    }
+]

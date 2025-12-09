@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - First United Pentecostal Church of Cookeville</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/page-styles.css">
+</head>
+<body>
+    <!-- HEADER NAVIGATION -->
+    <header class="site-header"></header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="main-container">
+        <section class="page-content">
+            <h1 class="page-title" id="eventDetailTitle">Event Title</h1>
+            <div class="event-meta-details">
+                <p>📍 <span id="eventDetailLocation">Location</span></p>
+                <p>⏰ <span id="eventDetailTime">Time</span></p>
+                <p>📅 <span id="eventDetailDate">Date</span></p>
+            </div>
+            <p id="eventDetailDescription">Event description goes here.</p>
+            <div id="eventDetailRegistration">
+                <!-- Registration link will be injected here if available -->
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"></footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title') || 'Event Title';
+            const location = params.get('location') || 'Location Not Specified';
+            const time = params.get('time') || 'Time Not Specified';
+            const date = params.get('date') || 'Date Not Specified';
+            const description = params.get('description') || 'No description available for this event.';
+            const registrationUrl = params.get('registrationUrl');
+
+            document.getElementById('eventDetailTitle').textContent = title;
+            document.getElementById('eventDetailLocation').textContent = location;
+            document.getElementById('eventDetailTime').textContent = time;
+            document.getElementById('eventDetailDate').textContent = date;
+            document.getElementById('eventDetailDescription').textContent = description;
+
+            const registrationDiv = document.getElementById('eventDetailRegistration');
+            if (registrationUrl) {
+                const regLink = document.createElement('a');
+                regLink.href = registrationUrl;
+                regLink.target = '_blank';
+                regLink.rel = 'noopener noreferrer';
+                regLink.className = 'cta-button'; // Re-use existing button style
+                regLink.textContent = 'Register Now';
+                registrationDiv.appendChild(regLink);
+            }
+        })();
+    </script>
+</body>
+</html>

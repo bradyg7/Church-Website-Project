@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+    This is the main entry point for the Church Website Project.
+    It includes the main page layout, navigation, sermon archives, and call to action.
+-->
+<html lang="en">
+<head>
+    <!-- Document metadata and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channels - First United Pentecostal Church of Cookeville</title>
+    <!-- Main stylesheet for the application -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--
+        The main content of the web page.
+        This section includes the header, hero banner, main content areas, and footer.
+    -->
+    <!--
+        Header section for site-wide navigation and branding.
+        Content for the header is dynamically loaded or defined elsewhere.
+    -->
+    <header class="site-header"></header>
+
+    <!--
+        Hero Banner Section: Displays a prominent title and subtitle.
+        This serves as the main visual introduction to the page.
+    -->
+    <section class="hero-banner">
+        <h1 class="hero-title">Channels</h1>
+        <p class="hero-subtitle">Explore our sermons, events, and ministry resources all in one place</p>
+    </section>
+
+    <!--
+        Main content area of the page.
+        This container holds the primary sections like sermon archives and calls to action.
+    -->
+    <main class="main-container">
+        
+        <!--
+            Sermon Archive Section: Displays a collection of sermons and allows filtering.
+            Sermons are dynamically loaded into the sermon-cards-grid.
+        -->
+        <section class="sermon-archive-section">
+            <h2 class="section-heading">Sermon Archive</h2>
+            
+            <!-- Filter Buttons: Allows users to filter sermons by category (e.g., All, Sermons, Bible Studies). -->
+            <div class="filter-buttons-container">
+                <button class="filter-button is-active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="sermon">Sermons</button>
+                <button class="filter-button" data-filter="bible-study">Bible Studies</button>
+                <button class="filter-button" data-filter="worship">Worship</button>
+            </div>
+
+            <!-- Sermon Cards Grid: Container where sermon cards will be dynamically inserted. -->
+            <div class="sermon-cards-grid" id="sermonCardsGrid">
+                <noscript>
+                    <p>This section requires JavaScript to be enabled.</p>
+                </noscript>
+                <!-- Cards will be injected dynamically from data/sermons.json -->
+            </div>
+
+            <!-- Sermon Actions: Buttons for loading more sermons and navigating to the full sermon list. -->
+            <div class="sermon-actions" style="text-align: center; margin-top: 2rem;">
+                <button id="loadMoreSermons" class="cta-button" style="margin-right: 1rem;">Load More Sermons</button>
+                <a href="all-sermons.html" class="cta-button">View All Sermons</a>
+            </div>
+        </section>
+
+
+
+        <!--
+            Call to Action Section: Encourages visitors to join Sunday service.
+            Includes a heading, descriptive text, and a button to plan a visit.
+        -->
+        <section class="call-to-action-section">
+            <h2 class="cta-heading">Join Us This Sunday</h2>
+            <p class="cta-text">
+                Experience worship, fellowship, and biblical teaching. Everyone is welcome!
+            </p>
+            <a href="https://www.upc1.org/contact-8" target="_blank" rel="noopener" class="cta-button">Plan Your Visit</a>
+        </section>
+
+    </main>
+
+    <!--
+        Footer section for site-wide information, copyrights, and additional links.
+        Content for the footer is dynamically loaded or defined elsewhere.
+    -->
+    <footer class="site-footer"></footer>
+
+    <!--
+        Main JavaScript file for interactive functionalities.
+        This script handles dynamic content loading, event listeners, and other client-side logic.
+    -->
+    <script src="assets/js/script.js"></script>
+
+
+</body>
+</html>

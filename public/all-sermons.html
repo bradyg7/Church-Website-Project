@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Sermons - First United Pentecostal Church of Cookeville</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- HEADER NAVIGATION -->
+    <header class="site-header"></header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="main-container">
+        
+        <!-- SERMON ARCHIVE SECTION -->
+        <section class="sermon-archive-section">
+            <h2 class="section-heading">All Sermons</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons-container">
+                <button class="filter-button is-active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="sermon">Sermons</button>
+                <button class="filter-button" data-filter="bible-study">Bible Studies</button>
+                <button class="filter-button" data-filter="worship">Worship</button>
+            </div>
+
+            <!-- Sermon Cards Grid -->
+            <div class="sermon-cards-grid" id="sermonCardsGrid">
+                <noscript>
+                    <p>This section requires JavaScript to be enabled.</p>
+                </noscript>
+                <!-- Cards will be injected dynamically from data/sermons.json -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer"></footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+
+
+</body>
+</html>

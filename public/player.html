@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermon Player</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+<body>
+    <header class="site-header"></header>
+    <main>
+        <div class="player-container">
+            <div class="video-section">
+                <div class="video-player" id="videoPlayer">
+                    <video id="mainVideo" preload="metadata" playsinline></video>
+                    <div class="video-poster" id="videoPoster">
+                        <img class="video-poster-image" id="posterImage" alt="Video Poster" />
+                        <div class="play-button-large" id="playButtonLarge"></div>
+                        <div class="sermon-title-overlay">
+                            <h2 id="overlayTitle">Sermon Title</h2>
+                            <p id="overlayMeta">Speaker • Date</p>
+                        </div>
+                    </div>
+                    <div class="loading-spinner" id="loadingSpinner"></div>
+                    <div class="video-controls" id="videoControls">
+                        <div class="progress-bar-container" id="progressContainer">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <div class="controls-row">
+                            <button class="control-button" id="playPauseBtn">▶️</button>
+                            <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
+                            <div class="volume-container">
+                                <button class="control-button" id="volumeBtn">🔊</button>
+                                <div class="volume-slider" id="volumeSlider">
+                                    <div class="volume-slider-fill" id="volumeFill"></div>
+                                </div>
+                            </div>
+                            <div style="flex:1"></div>
+                            <button class="control-button" id="fullscreenBtn">⛶</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h1 id="infoTitle">Sermon Title</h1>
+                    <div class="video-meta">
+                        <span id="infoDate">📅 Date</span>
+                        <span id="infoSpeaker">👤 Speaker</span>
+                        <span id="infoDuration">⏱️ Duration</span>
+                    </div>
+                    <p class="video-description" id="infoDescription">Add a description for this sermon.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer"></footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.7/dist/hls.min.js" integrity="sha256-Fn2YfE8jyzrM+8wHCazGbQp6aF2d3aJx+VZqnhuJf2k=" crossorigin="anonymous"></script>
+    <script src="player.js"></script>
+</body>
+</html>
