@@ -18,6 +18,28 @@
     const siteFooter = document.querySelector('.site-footer');
     const loadMoreBtn = document.getElementById('loadMoreSermons');
 
+    /**
+     * Resolves a relative path to an absolute path from the site root.
+     * This ensures consistent path resolution regardless of the current page location.
+     * @param {string} relativePath - The relative path to resolve
+     * @returns {string} The absolute path from site root
+     */
+    function resolvePathFromRoot(relativePath) {
+        // Always resolve relative to /public/ root
+        // If current path is /public/index.html, use './_header.html'
+        // If current path is /public/subdir/page.html, use '../_header.html'
+        const currentPath = window.location.pathname;
+        const publicIndex = currentPath.lastIndexOf('/public/');
+        if (publicIndex === -1) {
+            // fallback: just use relative path
+            return relativePath;
+        }
+        const afterPublic = currentPath.slice(publicIndex + 8); // 8 = length of '/public/'
+        const depth = afterPublic.split('/').length - 1; // subtract 1 for file itself
+        const prefix = depth > 0 ? '../'.repeat(depth) : '';
+        return prefix + relativePath;
+    }
+
     if (sermonGrid) {
         // Sermon loading configuration
         const initialSermonLimit = 6; // Number of sermons to load initially on index.html
@@ -133,7 +155,9 @@
          */
         async function fetchSermonsData() {
             try {
-                const res = await fetch('data/sermons.json', { cache: 'no-store' });
+                // Use resolved path that works from any page location
+                const dataPath = resolvePathFromRoot('data/sermons.json');
+                const res = await fetch(dataPath, { cache: 'no-store' });
                 if (!res.ok) {
                     console.error('Failed to fetch sermons:', res.statusText);
                     return [];
@@ -215,6 +239,11 @@
                 loadMoreBtn.style.display = 'none'; // Hide button if no more sermons
             }
         }
+
+        // Initialize sermon filters if present
+        initializeSermonFilters();
+        // Load initial sermons
+        loadInitialSermons();
     }
 
     if (eventsList) {
@@ -302,10 +331,18 @@
          */
         async function loadEvents() {
             try {
-                const res = await fetch('../data/events.json', { cache: 'no-store' });
-                if (!res.ok) return;
+                // Use resolved path that works from any page location
+                const dataPath = resolvePathFromRoot('data/events.json');
+                const res = await fetch(dataPath, { cache: 'no-store' });
+                if (!res.ok) {
+                    console.error('Failed to fetch events:', res.statusText);
+                    return;
+                }
                 const list = await res.json();
-                if (!Array.isArray(list)) return;
+                if (!Array.isArray(list)) {
+                    console.error('Events data is not an array.');
+                    return;
+                }
 
                 eventsList.innerHTML = '';
 
@@ -319,41 +356,54 @@
                 console.error('Failed to load events:', err);
             }
         }
+
+        // Load events
+        loadEvents();
     }
 
 
     /**
      * Dynamically loads common layout components like the header and footer
      * into their respective placeholders on the page.
-     * Assumes _header.html and _footer.html are available at the root level (public/).
+     * Uses absolute path resolution to work from any page location.
      */
     async function loadLayout() {
         if (siteHeader) {
-            const response = await fetch('_header.html');
-            const data = await response.text();
-            siteHeader.innerHTML = data;
+            try {
+                const headerPath = resolvePathFromRoot('_header.html');
+                const response = await fetch(headerPath);
+                if (!response.ok) {
+                    console.error('Failed to load header:', response.statusText);
+                    return;
+                }
+                const data = await response.text();
+                siteHeader.innerHTML = data;
+            } catch (err) {
+                console.error('Error loading header:', err);
+            }
         }
         if (siteFooter) {
-            const response = await fetch('_footer.html');
-            const data = await response.text();
-            siteFooter.innerHTML = data;
+            try {
+                const footerPath = resolvePathFromRoot('_footer.html');
+                const response = await fetch(footerPath);
+                if (!response.ok) {
+                    console.error('Failed to load footer:', response.statusText);
+                    return;
+                }
+                const data = await response.text();
+                siteFooter.innerHTML = data;
+            } catch (err) {
+                console.error('Error loading footer:', err);
+            }
         }
     }
 
     /**
      * Event listener that triggers when the DOM is fully loaded.
-     * It initiates the loading of layout components, sermon filters, and initial sermons/events.
+     * It initiates the loading of layout components.
      */
     document.addEventListener('DOMContentLoaded', () => {
         loadLayout(); // Load header and footer
-        if(sermonGrid) {
-            initializeSermonFilters(); // Setup sermon category filters
-            loadInitialSermons(); // Load sermons based on the current page
-        }
-        
-        if (eventsList) {
-            loadEvents();
-        }
         console.log('Church website initialized successfully!');
     });
 })();
