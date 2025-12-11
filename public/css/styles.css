@@ -1,3 +1,41 @@
+/* Dropdown menu for Ministry tab */
+.dropdown-menu li {
+    list-style-type: none;
+}
+.nav-item.dropdown .dropdown-menu li::marker {
+    display: none;
+}
+.nav-item.dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 0.5rem 0;
+}
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+.dropdown-item:hover {
+    background: #f5f5f5;
+    color: #cc0000;
+}
 /**
  * @file styles.css
  * @description Main stylesheet for the Church Website Project.

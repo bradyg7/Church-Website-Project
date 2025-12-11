@@ -11,6 +11,7 @@
     <title>Channels - First United Pentecostal Church of Cookeville</title>
     <!-- Main stylesheet for the application -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/page-styles.css">
 </head>
 <body>
     <!--
@@ -39,32 +40,35 @@
     <main class="main-container">
         
         <!--
-            Sermon Archive Section: Displays a collection of sermons and allows filtering.
-            Sermons are dynamically loaded into the sermon-cards-grid.
+            Image Panel Section: Displays a collection of images.
         -->
-        <section class="sermon-archive-section">
-            <h2 class="section-heading">Sermon Archive</h2>
-            
-            <!-- Filter Buttons: Allows users to filter sermons by category (e.g., All, Sermons, Bible Studies). -->
-            <div class="filter-buttons-container">
-                <button class="filter-button is-active" data-filter="all">All</button>
-                <button class="filter-button" data-filter="sermon">Sermons</button>
-                <button class="filter-button" data-filter="bible-study">Bible Studies</button>
-                <button class="filter-button" data-filter="worship">Worship</button>
-            </div>
-
-            <!-- Sermon Cards Grid: Container where sermon cards will be dynamically inserted. -->
-            <div class="sermon-cards-grid" id="sermonCardsGrid">
-                <noscript>
-                    <p>This section requires JavaScript to be enabled.</p>
-                </noscript>
-                <!-- Cards will be injected dynamically from data/sermons.json -->
-            </div>
-
-            <!-- Sermon Actions: Buttons for loading more sermons and navigating to the full sermon list. -->
-            <div class="sermon-actions" style="text-align: center; margin-top: 2rem;">
-                <button id="loadMoreSermons" class="cta-button" style="margin-right: 1rem;">Load More Sermons</button>
-                <a href="all-sermons.html" class="cta-button">View All Sermons</a>
+        <section class="image-panel-section">
+            <h2 class="section-heading">Gallery</h2>
+            <div class="image-panel-grid">
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_8d458d0b6fa243a3bf7405ab48337f3a~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_8d458d0b6fa243a3bf7405ab48337f3a~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_c4cffd1995644ba9999ab43b24073a94~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_c4cffd1995644ba9999ab43b24073a94~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_3b0704f8a69a4106a37d0e86d29bafd6~mv2.jpg/v1/fit/w_1001,h_1164,q_90,enc_avif,quality_auto/e46a09_3b0704f8a69a4106a37d0e86d29bafd6~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_fbf91dbfa2d24396955f56add6247047~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_fbf91dbfa2d24396955f56add6247047~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_27fb8c2094bc4f1aad8e296a9a581cb6~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_27fb8c2094bc4f1aad8e296a9a581cb6~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_489ea3ca9925491ab3a4bc8d8c49b507~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_489ea3ca9925491ab3a4bc8d8c49b507~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_3a2dc259f9ff4de4a809005e0f51c29d~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_3a2dc259f9ff4de4a809005e0f51c29d~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_dd3d8f86cc6e4bf1b8eaa693d67eac2a~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_dd3d8f86cc6e4bf1b8eaa693d67eac2a~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_0c8fd09a741a4de8896928d83abbc03f~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_0c8fd09a741a4de8896928d83abbc03f~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_fd978d08f886443697cf9368f18b6c5d~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_fd978d08f886443697cf9368f18b6c5d~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_744e60200fe44f29805ce8a5b200b9e1~mv2.jpg/v1/fit/w_1001,h_1164,q_90,enc_avif,quality_auto/e46a09_744e60200fe44f29805ce8a5b200b9e1~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_98143ff9e37146ffb69aae418ce22988~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_98143ff9e37146ffb69aae418ce22988~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_828b0cf591f144869f8652292be26c62~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_828b0cf591f144869f8652292be26c62~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_0ab37cc926db4887b9c97b9e6d3ee161~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_0ab37cc926db4887b9c97b9e6d3ee161~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_56662ae6525d464581c36aafde7e8a14~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_56662ae6525d464581c36aafde7e8a14~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_3899388c4552483ca12e4dc3544342c9~mv2.png/v1/fit/w_1001,h_1164,q_90,enc_avif,quality_auto/e46a09_3899388c4552483ca12e4dc3544342c9~mv2.png" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_f8f7329e238b4005a14ca217b3096284~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_f8f7329e238b4005a14ca217b3096284~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_30b59153d9f14da59b119f728ea4e8bc~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_30b59153d9f14da59b119f728ea4e8bc~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_ac8d75e5479b43f19cbe7621e2b2b827~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_ac8d75e5479b43f19cbe7621e2b2b827~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_d492d67d1df74a928d0b2471fa794770~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_d492d67d1df74a928d0b2471fa794770~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_949667dfc8724214ba47a898f6717e17~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_949667dfc8724214ba47a898f6717e17~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_5b5aaea2062745b185b745f277eb48e8~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_5b5aaea2062745b185b745f277eb48e8~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_1a74a2f6749a41e5a94b6b739d08b54f~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_1a74a2f6749a41e5a94b6b739d08b54f~mv2.jpg" alt="Gallery image"></div>
+                <div class="image-panel-item"><img src="https://static.wixstatic.com/media/e46a09_0386f2ee0ca446809c69ecca260e6cad~mv2.jpg/v1/fit/w_1174,h_1366,q_90,enc_avif,quality_auto/e46a09_0386f2ee0ca446809c69ecca260e6cad~mv2.jpg" alt="Gallery image"></div>
             </div>
         </section>
 
