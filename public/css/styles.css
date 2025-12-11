@@ -214,12 +214,21 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .sermon-card:hover {
     /* Hover effect for sermon cards */
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.sermon-card-link {
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .sermon-card-thumbnail {
@@ -237,6 +246,10 @@ body {
 .sermon-card-content {
     /* Padding for the content area of the sermon card */
     padding: 1.5rem;
+}
+
+.sermon-card-text {
+    flex-grow: 1;
 }
 
 .sermon-category-tag {
@@ -469,8 +482,7 @@ body {
    RESPONSIVE DESIGN - MOBILE
    ============================================ */
 
-@media (max-width: 768px) {
-    /* Styles applied for screens up to 768px wide (typical for tablets and mobile devices) */
+@media (max-width: 300px) {
     .hero-title {
         /* Adjust font size for smaller screens */
         font-size: 2.5rem;
@@ -778,22 +790,24 @@ body {
 .sermon-stream-header { 
     /* Header for the sermon stream, including title and back link */
     display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
+    align-items: baseline; 
     gap: 1rem; 
     flex-wrap: wrap; 
 }
 .sermon-stream-title { 
     /* Styling for the sermon stream title */
     font-size: 1.75rem; 
-    margin: 1rem 0; 
+    margin: 1rem 0;
+    flex-grow: 1;
 }
 .back-link { 
     /* Styling for the back navigation link */
     color: inherit; 
     text-decoration: none; 
     font-size: 0.95rem; 
-    opacity: 0.8; 
+    opacity: 0.8;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 .back-link:hover { 
     /* Hover effect for the back link */

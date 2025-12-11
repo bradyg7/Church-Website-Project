@@ -26,7 +26,7 @@ from googleapiclient.errors import HttpError
 from dotenv import load_dotenv
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(ROOT, "data")
+DATA_DIR = os.path.join(ROOT, "public", "data")
 OUTPUT_JSON = os.path.join(DATA_DIR, "sermons.json")
 
 
@@ -124,14 +124,30 @@ def normalize_sermons(videos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     for v in videos_sorted:
         thumbs = v.get("thumbnails", {})
         thumb = thumbs.get("maxres") or thumbs.get("standard") or thumbs.get("high") or thumbs.get("medium") or thumbs.get("default") or {}
+        
+        title = v.get("title", "")
+        person = ""
+        if "|" in title:
+            parts = title.split("|")
+            person = parts[-1].strip()
+            title = "|".join(parts[:-1]).strip()
+
+        sermon_type = "Sunday Service"
+        if "Morning Manna" in v.get("description", "") or "Morning Manna" in title:
+            sermon_type = "Morning Manna"
+        
+        date_str = v.get("publishedAt", "").split("T")[0]
+
         normalized.append(
             {
                 "youtubeId": v.get("id"),
-                "title": v.get("title"),
+                "title": title,
                 "description": v.get("description"),
-                "date": v.get("publishedAt"),
+                "date": date_str,
                 "thumbnail": thumb.get("url"),
                 "url": v.get("url"),
+                "person": person,
+                "sermon_type": sermon_type
             }
         )
     return normalized

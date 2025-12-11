@@ -41,11 +41,6 @@
     }
 
     if (sermonGrid) {
-        // Sermon loading configuration
-        const initialSermonLimit = 6; // Number of sermons to load initially on index.html
-        const sermonsPerPage = 6;    // Number of sermons to load per "Load More" click
-        let currentSermonPage = 0;   // Tracks the current page of sermons loaded
-
         let allSermonsData = []; // Stores all sermons after initial fetch for filtering and pagination
 
         /**
@@ -119,11 +114,13 @@
                         <img src="${thumbUrl}" alt="${title || 'Sermon'} thumbnail" style="width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;" />
                     </div>
                     <div class="sermon-card-content">
-                        <span class="sermon-category-tag">Sermon</span>
-                        <h3 class="sermon-title">${title || 'Sermon'}</h3>
-                        <div class="sermon-metadata">
-                            <span class="sermon-date">📅 ${date || ''}</span>
-                            <span class="sermon-speaker">👤 ${speaker || ''}</span>
+                        <div class="sermon-card-text">
+                            <span class="sermon-category-tag">Sermon</span>
+                            <h3 class="sermon-title">${title || 'Sermon'}</h3>
+                            <div class="sermon-metadata">
+                                <span class="sermon-date">📅 ${date || ''}</span>
+                                <span class="sermon-speaker">👤 ${speaker || ''}</span>
+                            </div>
                         </div>
                         <p class="sermon-description">Watch this sermon on our streaming page.</p>
                     </div>
@@ -201,44 +198,16 @@
          * Manages the visibility and functionality of the "Load More Sermons" button.
          */
         async function loadInitialSermons() {
-            allSermonsData = await fetchSermonsData();
-            
             const path = window.location.pathname;
-            if (path.endsWith('index.html') || path === '/') {
-                const sermonsToShow = allSermonsData.slice(0, initialSermonLimit);
-                await renderSermons(sermonsToShow);
-                currentSermonPage = 1; // Mark that the first page has been loaded
-
-                if (allSermonsData.length > initialSermonLimit && loadMoreBtn) {
-                    loadMoreBtn.style.display = 'block';
-                    loadMoreBtn.addEventListener('click', loadMoreSermons);
-                } else if (loadMoreBtn) {
-                    loadMoreBtn.style.display = 'none';
-                }
-            } else if (path.endsWith('all-sermons.html')) {
+            if (path.endsWith('all-sermons.html')) {
+                allSermonsData = await fetchSermonsData();
+                sermonGrid.innerHTML = ''; // Clear existing sermons to prevent duplication
                 await renderSermons(allSermonsData);
-                if (loadMoreBtn) loadMoreBtn.style.display = 'none'; // Ensure button is hidden on all-sermons page
+                if (loadMoreBtn) loadMoreBtn.style.display = 'none';
             }
         }
 
-        /**
-         * Loads additional sermons when the "Load More Sermons" button is clicked.
-         * Renders a batch of sermons and hides the button if all sermons have been loaded.
-         */
-        async function loadMoreSermons() {
-            const startIndex = currentSermonPage * sermonsPerPage;
-            const endIndex = startIndex + sermonsPerPage;
-            const sermonsToLoad = allSermonsData.slice(startIndex, endIndex);
 
-            if (sermonsToLoad.length > 0) {
-                await renderSermons(sermonsToLoad);
-                currentSermonPage++;
-            }
-
-            if (endIndex >= allSermonsData.length && loadMoreBtn) {
-                loadMoreBtn.style.display = 'none'; // Hide button if no more sermons
-            }
-        }
 
         // Initialize sermon filters if present
         initializeSermonFilters();
